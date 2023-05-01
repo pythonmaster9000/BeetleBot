@@ -22,8 +22,8 @@ async def clear_chats():
 
 
 @client.command()
-async def beet(ctx, *args):
-    prompt = ' '.join(args)
+async def beet(ctx, *, args=None):
+    prompt = args
     if not conversations.get(str(ctx.message.author.id)):
         conversations[str(ctx.message.author.id)] = chat.NewChat(preface=chat.beetlejuice_preface,
                                                                  reassurance=chat.beetlejuice_reassurance)
