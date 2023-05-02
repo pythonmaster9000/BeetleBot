@@ -56,6 +56,11 @@ class NewChat:
         self.last_interaction = int(time.time())
         if preface:
             self.record("system", self.preface)
+            
+    def reset_record(self):
+        self.chat_history = []
+        if self.preface:
+            self.record("system", self.preface)
 
     def record(self, role: str, content: str):
         self.chat_history.append({"role": role, "content": content})
@@ -72,6 +77,9 @@ class NewChat:
         except openai.error.RateLimitError:
             # Funny way of saying rate limit can't break character
             return "Hey buddy cool it down pal 3 questions a minute here. Anyone want a fuckin slice?"
+        except openai.error.InvalidRequestError:
+            self.reset_record()
+            self.chat(prompt)
         self.record("assistant", completion.choices[0].message.content)
         return completion.choices[0].message.content
 
