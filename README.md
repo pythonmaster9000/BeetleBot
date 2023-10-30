@@ -11,8 +11,6 @@ I found that other sites such as forefront AI do not use this method and are eas
 
 
 
-![image](https://user-images.githubusercontent.com/120974929/235405655-8e480fc6-c09e-4d6d-834b-f2a25ff2e12f.png)
-
 
 ![forefront](https://user-images.githubusercontent.com/120974929/235533302-f8caefea-409d-4836-af37-bcad4e4ed623.png)
 
